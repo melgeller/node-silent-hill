@@ -57,8 +57,8 @@ const patchGame = async (req, res) => {
     const { id } = req.params;
     const patchGame = new Game(req.body);
     patchGame._id = id;
-    const PeliculaDB = await Game.findByIdAndUpdate(id, patchGame)
-    return res.status(200).json(PeliculaDB)
+    const GameDB = await Game.findByIdAndUpdate(id, patchGame)
+    return res.status(200).json(GameDB)
 
   } catch (error) {
     return res.status(500).json(error)

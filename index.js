@@ -3,7 +3,7 @@ const dotenv = require ("dotenv");
 dotenv.config()
 
 const gamesRoutes = require("./src/api/routes/games.routes")
-//const spinOffsRoutes = require("./src/api/routes/spinoffs.routes")
+const spinOffsRoutes = require("./src/api/routes/spinoffs.routes")
 
 const {connect} = require("./src/utils/database.js")
 
@@ -16,7 +16,7 @@ server.use(express.urlencoded({ extended: false}));
 connect()
 
 server.use("/games", gamesRoutes);
-//server.use("/spinOffs", spinOffsRoutes)
+server.use("/spinOffs", spinOffsRoutes)
 
 server.listen(PORT, () => {
     console.log(`Server running in http://localhost:${PORT}`);
