@@ -17,7 +17,7 @@ const spins = [
 
 const spinsDocuments = spins.map((spin) => new Spin(spin));
 
-mongoose.connect("mongodb://localhost:27017/games", {
+mongoose.connect("mongodb+srv://melgeller:warcraft3atlas@cluster0.0z38a6c.mongodb.net/games?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     }).then(async () => {

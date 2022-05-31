@@ -1,4 +1,5 @@
 const express = require("express");
+const upload = require('../middlewares/file')
 
 const router = express.Router()
 
@@ -7,8 +8,8 @@ const {getAllSpins, getSpinByID, getSpinByTitle, postNewSpin, deleteSpin, patchS
 router.get("/", getAllSpins);
 router.get("/id/:id", getSpinByID);
 router.get("/title/:title", getSpinByTitle);
-router.post("/", postNewSpin);
+router.post("/", upload.single('poster'), postNewSpin);
 router.delete("/:id", deleteSpin);
-router.patch("/:id", patchSpin)
+router.patch("/:id", upload.single('poster'), patchSpin)
 
 module.exports = router;

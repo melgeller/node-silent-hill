@@ -32,6 +32,9 @@ const getGameByTitle = async (req, res) => {
 const postNewGame = async (req, res) => {
   try {
     const newGame = new Game(req.body);
+    if (req.file) {
+      newGame.poster = req.file.path;
+    }
     const gameDB = await newGame.save()
     return res.status(200).json(gameDB);
   } catch (error) {
