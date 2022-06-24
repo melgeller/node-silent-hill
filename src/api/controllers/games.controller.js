@@ -30,6 +30,7 @@ const getGameByTitle = async (req, res) => {
 };
 
 const postNewGame = async (req, res) => {
+  console.log(req.body);
   try {
     const newGame = new Game(req.body);
     if (req.file) {

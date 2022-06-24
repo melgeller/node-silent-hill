@@ -6,6 +6,8 @@ const spinSchema = new Schema(
     title: {type: String, required: true},
     year: {type: Number, required: true},
     poster: {type: String, required: true},
+    platform:{type: String, required: false},
+    about:{type:String, required:false}
 
 }, {timestamps: true}
 );
